@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/packages/apps/notification-service"
+  },
+  "exclude": ["**/*.spec.ts", "jest.config.js", "test"]
+}

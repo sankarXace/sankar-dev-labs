@@ -1,0 +1,33 @@
+{
+  "name": "notification-service",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "packages/apps/notification-service/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/apps/notification-service/dist",
+        "main": "packages/apps/notification-service/src/main.ts",
+        "tsConfig": "packages/apps/notification-service/tsconfig.app.json"
+      },
+      "configurations": { "production": {} }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=packages/apps/notification-service/jest.config.js --passWithNoTests",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=packages/apps/notification-service/jest.config.js --testPathPattern=app.e2e-spec --passWithNoTests",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  },
+  "tags": []
+}
