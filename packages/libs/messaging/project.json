@@ -1,0 +1,26 @@
+{
+  "name": "messaging",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/libs/messaging/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/libs/messaging/dist",
+        "main": "packages/libs/messaging/src/index.ts",
+        "tsConfig": "packages/libs/messaging/tsconfig.lib.json"
+      },
+      "configurations": { "production": {} }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=jest.config.js --passWithNoTests",
+        "cwd": "packages/libs/messaging"
+      }
+    }
+  },
+  "tags": []
+}
