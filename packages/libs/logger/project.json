@@ -1,0 +1,26 @@
+{
+  "name": "logger",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/libs/logger/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/libs/logger/dist",
+        "main": "packages/libs/logger/src/index.ts",
+        "tsConfig": "packages/libs/logger/tsconfig.lib.json"
+      },
+      "configurations": { "production": {} }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=jest.config.js --passWithNoTests",
+        "cwd": "packages/libs/logger"
+      }
+    }
+  },
+  "tags": []
+}

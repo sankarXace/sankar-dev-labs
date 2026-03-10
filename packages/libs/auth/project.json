@@ -1,0 +1,26 @@
+{
+  "name": "auth",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/libs/auth/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/libs/auth/dist",
+        "main": "packages/libs/auth/src/index.ts",
+        "tsConfig": "packages/libs/auth/tsconfig.lib.json"
+      },
+      "configurations": { "production": {} }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=jest.config.js --passWithNoTests",
+        "cwd": "packages/libs/auth"
+      }
+    }
+  },
+  "tags": []
+}
