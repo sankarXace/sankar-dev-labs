@@ -1,0 +1,26 @@
+{
+  "name": "common",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/libs/common/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/libs/common/dist",
+        "main": "packages/libs/common/src/index.ts",
+        "tsConfig": "packages/libs/common/tsconfig.lib.json"
+      },
+      "configurations": { "production": {} }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=jest.config.js --passWithNoTests",
+        "cwd": "packages/libs/common"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,19 @@
+{
+  "name": "interfaces",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/libs/interfaces/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/libs/interfaces/dist",
+        "main": "packages/libs/interfaces/src/index.ts",
+        "tsConfig": "packages/libs/interfaces/tsconfig.lib.json"
+      },
+      "configurations": { "production": {} }
+    }
+  },
+  "tags": []
+}
