@@ -4,9 +4,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { AuthTcpController } from './auth-tcp.controller';
+import { ApiKeyModule } from '../api-key/api-key.module';
 
 @Module({
   imports: [
+    ApiKeyModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       useFactory: (config: ConfigService) => ({
