@@ -1,0 +1,13 @@
+node_modules
+dist
+.git
+.env
+.env.*
+!.env.example
+*.log
+.cursor
+.worktrees
+coverage
+.nyc_output
+*.md
+!README.md
