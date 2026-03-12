@@ -24,13 +24,13 @@ jobs:
       - name: Lint (Prettier)
         run: npx prettier --check "packages/**/*.{ts,js,json}" "*.json" 2>/dev/null || true
 
+      - name: Prisma generate
+        run: |
+          cd packages/libs/database && npx prisma validate
+          npx prisma generate
+
       - name: Run tests
         run: npx nx run-many -t test --all --skip-nx-cache
 
       - name: Build
         run: npx nx run-many -t build --all --skip-nx-cache
-
-      - name: Prisma validate
-        run: |
-          cd packages/libs/database && npx prisma validate
-          npx prisma generate
