@@ -51,4 +51,4 @@ function tcpClientFactory(
   ],
   exports: [AUTH_SERVICE, WORKSPACE_SERVICE, ISSUE_SERVICE, INTEGRATION_SERVICE, JwtModule],
 })
-export class AuthModule {}
+export class AuthModule { }
