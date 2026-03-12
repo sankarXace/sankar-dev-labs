@@ -26,10 +26,12 @@ describe('PrismaExceptionFilter', () => {
   });
 
   it('maps P2025 to 404 Not Found', () => {
-    const exception = new Prisma.PrismaClientKnownRequestError('Record not found', {
+    const exception = {
       code: 'P2025',
+      message: 'Record not found',
       clientVersion: '1.0',
-    });
+      name: 'PrismaClientKnownRequestError',
+    } as any;
     filter.catch(exception, host);
     expect(response.status).toHaveBeenCalledWith(404);
     expect(response.json).toHaveBeenCalledWith(
@@ -38,10 +40,12 @@ describe('PrismaExceptionFilter', () => {
   });
 
   it('maps P2002 to 409 Conflict', () => {
-    const exception = new Prisma.PrismaClientKnownRequestError('Unique constraint failed', {
+    const exception = {
       code: 'P2002',
+      message: 'Unique constraint failed',
       clientVersion: '1.0',
-    });
+      name: 'PrismaClientKnownRequestError',
+    } as any;
     filter.catch(exception, host);
     expect(response.status).toHaveBeenCalledWith(409);
   });
