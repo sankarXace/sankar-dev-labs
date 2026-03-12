@@ -1,0 +1,33 @@
+{
+  "name": "api-gateway",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "packages/apps/api-gateway/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/apps/api-gateway/dist",
+        "main": "packages/apps/api-gateway/src/main.ts",
+        "tsConfig": "packages/apps/api-gateway/tsconfig.app.json"
+      },
+      "configurations": { "production": {} }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=packages/apps/api-gateway/jest.config.js --passWithNoTests",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=packages/apps/api-gateway/jest.config.js --testPathPattern=app.e2e-spec --passWithNoTests",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  },
+  "tags": []
+}

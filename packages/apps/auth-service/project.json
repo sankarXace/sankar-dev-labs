@@ -1,0 +1,40 @@
+{
+  "name": "auth-service",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "packages/apps/auth-service/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/apps/auth-service/dist",
+        "main": "packages/apps/auth-service/src/main.ts",
+        "tsConfig": "packages/apps/auth-service/tsconfig.app.json"
+      },
+      "configurations": { "production": {} }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx ts-node -r tsconfig-paths/register packages/apps/auth-service/src/main.ts",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=packages/apps/auth-service/jest.config.js --passWithNoTests",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=packages/apps/auth-service/jest.config.js --testPathPattern=app.e2e-spec --passWithNoTests",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,26 @@
+{
+  "name": "dto",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/libs/dto/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/libs/dto/dist",
+        "main": "packages/libs/dto/src/index.ts",
+        "tsConfig": "packages/libs/dto/tsconfig.lib.json"
+      },
+      "configurations": { "production": {} }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config=jest.config.js --passWithNoTests",
+        "cwd": "packages/libs/dto"
+      }
+    }
+  },
+  "tags": []
+}

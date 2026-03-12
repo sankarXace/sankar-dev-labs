@@ -1,0 +1,17 @@
+{
+  "extends": "../../../tsconfig.base.lib.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@sankar-dev-labs/auth": ["../../libs/auth/src/index.ts"],
+      "@sankar-dev-labs/common": ["../../libs/common/src/index.ts"],
+      "@sankar-dev-labs/config": ["../../libs/config/src/index.ts"]
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "test"]
+}

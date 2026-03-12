@@ -1,0 +1,32 @@
+{
+  "name": "@sankar-dev-labs/issue-service",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nx run issue-service:build",
+    "start": "node dist/packages/apps/issue-service/main.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/config": "^4.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/microservices": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "@sankar-dev-labs/common": "*",
+    "@sankar-dev-labs/config": "*",
+    "@sankar-dev-labs/database": "*",
+    "@sankar-dev-labs/dto": "*",
+    "@sankar-dev-labs/interfaces": "*",
+    "bullmq": "^5.0.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^11.0.0",
+    "@types/node": "~22.10.0",
+    "jest": "^29.0.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "~5.9.2"
+  }
+}

@@ -1,0 +1,27 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Issue {
+  assigneeId: String
+  createdById: String!
+  description: String
+  id: ID!
+  priority: String
+  status: String!
+  title: String!
+  workspaceId: String!
+}
+
+type Query {
+  issue(id: String!): Issue
+  issues(limit: Float = 20, page: Float = 1, status: String, workspaceId: String!): [Issue!]!
+  workspace(id: String!): Workspace
+}
+
+type Workspace {
+  id: ID!
+  name: String!
+  plan: String!
+  slug: String!
+}

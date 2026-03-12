@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/packages/apps/workspace-service"
+  },
+  "exclude": ["**/*.spec.ts", "jest.config.js", "test"]
+}
