@@ -1,0 +1,6 @@
+{
+  "name": "flutter-ui-course",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/flutter-ui-course/src",
+  "tags": []
+}
