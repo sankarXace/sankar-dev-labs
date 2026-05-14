@@ -43,3 +43,7 @@ Thumbs.db
 
 # Git worktrees (isolated implementation branches)
 .worktrees
+
+.nx/polygraph
+.claude/worktrees
+.claude/settings.local.json
